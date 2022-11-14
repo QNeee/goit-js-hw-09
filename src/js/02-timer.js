@@ -1,5 +1,7 @@
 import '../css/common.css';
 import flatpickr from "flatpickr";
+import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
 const options = {
@@ -11,7 +13,7 @@ const options = {
     onClose(selectedDates) {
         timer.targetTime = selectedDates[0].getTime();
         if (timer.targetTime - Date.now() <= 0) {
-            return alert("Please choose a date in the future");
+            return Notify.failure('Please choose a date in the future');
         }
         refs.buttonStart.disabled = false;
     },
