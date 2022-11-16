@@ -67,7 +67,9 @@ const timer = {
                 refs.minutes.textContent === '00' &&
                 refs.seconds.textContent === '00'
             ) {
+                Notify.success("Timer OFF");
                 return clearInterval(this.intervalId);
+
 
             }
         }, 1000);
