@@ -18,7 +18,7 @@ function createPromise(position, delay) {
     }, delay);
   });
 }
-function thenCatch(e) {
+function generatePromises(e) {
   const {
     elements: { delay, step, amount },
   } = e.currentTarget;
@@ -35,7 +35,7 @@ function thenCatch(e) {
 }
 function onSubmit(e) {
   e.preventDefault();
-  thenCatch(e);
+  generatePromises(e);
   e.target.reset();
 }
 function onSuccess({ position, delay }) {
