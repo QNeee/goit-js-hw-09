@@ -35,8 +35,8 @@ function thenCatch(e) {
 }
 function onSubmit(e) {
   e.preventDefault();
-  if (!e.target.NodeName === 'BUTTON') return;
-  thenCatch(e);
+  if (!e.target.nodeName === 'BUTTON') return;
+  thenCatch();
   e.currentTarget.reset();
 }
 function onSuccess({ position, delay }) {
