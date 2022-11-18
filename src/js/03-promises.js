@@ -35,9 +35,8 @@ function thenCatch(e) {
 }
 function onSubmit(e) {
   e.preventDefault();
-  if (!e.target.nodeName === 'BUTTON') return;
-  thenCatch();
-  e.currentTarget.reset();
+  thenCatch(e);
+  e.target.reset();
 }
 function onSuccess({ position, delay }) {
   Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
